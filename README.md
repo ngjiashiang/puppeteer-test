@@ -66,3 +66,6 @@ const browser = await puppeteer.launch({
 });
 ```
 you can toggle ```headless``` to false
+
+### On usage of puppeteer
+you can visit [Puppeteer's documentation](https://pptr.dev)
