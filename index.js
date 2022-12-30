@@ -58,12 +58,12 @@ async function start() {
     let parcelInsuranceCharge = await page.$eval(parcelInsuranceChargeQuery, el => el.innerHTML)
     parcelInsuranceCharge = parcelInsuranceCharge.replace(/\s+/g, '');
     parcelInsuranceCharge = parcelInsuranceCharge.replace(/(\r\n|\n|\r)/gm, '');
-    console.log('Parcel rate: ' + parcelInsuranceCharge)
+    console.log('Parcel insurance rate: ' + parcelInsuranceCharge)
 
     let parcelTotal = await page.$eval(parcelTotalQuery, el => el.innerHTML)
     parcelTotal = parcelTotal.replace(/\s+/g, '');
     parcelTotal = parcelTotal.replace(/(\r\n|\n|\r)/gm, '');
-    console.log('Parcel rate: ' + parcelTotal)
+    console.log('Parcel total: ' + parcelTotal)
 
     let documentRate = await page.$eval(documentRateQuery, el => el.innerHTML)
     documentRate = documentRate.replace(/\s+/g, '');
@@ -73,12 +73,12 @@ async function start() {
     let documentInsuranceCharge = await page.$eval(documentInsuranceChargeQuery, el => el.innerHTML)
     documentInsuranceCharge = documentInsuranceCharge.replace(/\s+/g, '');
     documentInsuranceCharge = documentInsuranceCharge.replace(/(\r\n|\n|\r)/gm, '');
-    console.log('Document rate: ' + documentInsuranceCharge)
+    console.log('Document insurance rate: ' + documentInsuranceCharge)
 
     let documentTotal = await page.$eval(documentTotalQuery, el => el.innerHTML)
     documentTotal = documentTotal.replace(/\s+/g, '');
     documentTotal = documentTotal.replace(/(\r\n|\n|\r)/gm, '');
-    console.log('Document rate: ' + documentTotal)
+    console.log('Document total: ' + documentTotal)
 
     await browser.close()
 }
