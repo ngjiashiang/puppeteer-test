@@ -8,7 +8,7 @@ let length = '30'
 let width = '30'
 let height = '30'
 let insurance = true
-let itemValue = "20.22"
+let itemValue = '20.22'
 
 const parcelRateQuery = 'tr:nth-child(2) td:nth-child(2)'
 const parcelInsuranceChargeQuery = 'tr:nth-child(3) td:nth-child(2)'
@@ -46,38 +46,38 @@ async function start() {
         await itemValueField.type(itemValue)
     }
 
-    await page.click("button[type=submit]");
+    await page.click('button[type=submit]');
 
     await page.waitForSelector('tr:nth-child(2) td:nth-child(2)');
 
     let parcelRate = await page.$eval(parcelRateQuery, el => el.innerHTML)
     parcelRate = parcelRate.replace(/\s+/g, '');
-    parcelRate = parcelRate.replace(/(\r\n|\n|\r)/gm, "");
+    parcelRate = parcelRate.replace(/(\r\n|\n|\r)/gm, '');
     console.log('Parcel rate: ' + parcelRate)
 
     let parcelInsuranceCharge = await page.$eval(parcelInsuranceChargeQuery, el => el.innerHTML)
     parcelInsuranceCharge = parcelInsuranceCharge.replace(/\s+/g, '');
-    parcelInsuranceCharge = parcelInsuranceCharge.replace(/(\r\n|\n|\r)/gm, "");
+    parcelInsuranceCharge = parcelInsuranceCharge.replace(/(\r\n|\n|\r)/gm, '');
     console.log('Parcel rate: ' + parcelInsuranceCharge)
 
     let parcelTotal = await page.$eval(parcelTotalQuery, el => el.innerHTML)
     parcelTotal = parcelTotal.replace(/\s+/g, '');
-    parcelTotal = parcelTotal.replace(/(\r\n|\n|\r)/gm, "");
+    parcelTotal = parcelTotal.replace(/(\r\n|\n|\r)/gm, '');
     console.log('Parcel rate: ' + parcelTotal)
 
     let documentRate = await page.$eval(documentRateQuery, el => el.innerHTML)
     documentRate = documentRate.replace(/\s+/g, '');
-    documentRate = documentRate.replace(/(\r\n|\n|\r)/gm, "");
+    documentRate = documentRate.replace(/(\r\n|\n|\r)/gm, '');
     console.log('Document rate: ' + documentRate)
 
     let documentInsuranceCharge = await page.$eval(documentInsuranceChargeQuery, el => el.innerHTML)
     documentInsuranceCharge = documentInsuranceCharge.replace(/\s+/g, '');
-    documentInsuranceCharge = documentInsuranceCharge.replace(/(\r\n|\n|\r)/gm, "");
+    documentInsuranceCharge = documentInsuranceCharge.replace(/(\r\n|\n|\r)/gm, '');
     console.log('Document rate: ' + documentInsuranceCharge)
 
     let documentTotal = await page.$eval(documentTotalQuery, el => el.innerHTML)
     documentTotal = documentTotal.replace(/\s+/g, '');
-    documentTotal = documentTotal.replace(/(\r\n|\n|\r)/gm, "");
+    documentTotal = documentTotal.replace(/(\r\n|\n|\r)/gm, '');
     console.log('Document rate: ' + documentTotal)
 
     await browser.close()
