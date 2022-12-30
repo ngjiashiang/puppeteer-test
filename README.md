@@ -59,7 +59,7 @@ let itemValue = '20.22'
 ```
 Else, these variables can be left undefined.
 
-### If you wish to run pupeppeteer headlessly
+### If you wish to run puppeteer headlessly
 ```javascript
 const browser = await puppeteer.launch({
         headless: true
